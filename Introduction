@@ -1,0 +1,3 @@
+Ansible is a configuration management tool.It is a simple open-source IT Engine which automates application deployment..uses yaml scripting
+Inventory: it consists of target servers/nodes private IP Addresses.
+ansible adhoc cmd for creating file in target server: ansible -i inventory all -m "shell" -a "touch devopsclass"
