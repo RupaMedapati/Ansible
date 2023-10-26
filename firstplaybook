@@ -1,0 +1,39 @@
+---
+- name: Install Git
+  hosts: all  # Replace with the target host(s) where you want to install Git
+  become: yes  # This allows you to run tasks as a superuser (sudo)
+
+  tasks:
+    - name: Update the package manager cache
+      apt:
+        update_cache: yes
+      when: ansible_os_family == 'Debian'  # Check for Debian-based systems (e.g., Ubuntu)
+
+    - name: Install Git
+      package:
+        name: git
+        state: present
+      when: ansible_os_family == 'Debian'  # Install Git if the system is Debian-based
+
+    - name: Install Git
+      package:
+        name: git
+        state: present
+      when: ansible_os_family == 'RedHat'  # Check for RedHat-based systems (e.g., CentOS)
+
+    - name: Install Git
+      package:
+        name: git
+        state: present
+      when: ansible_os_family == 'Suse'  # Check for SUSE-based systems
+
+    - name: Verify Git installation
+      command: git --version
+      register: git_version
+      changed_when: false  # Ignore changes in the output
+
+    - name: Display Git version
+      debug:
+        var: git_version.stdout
+
+
