@@ -1,0 +1,2 @@
+Roles: mainly we used to structure ansible playbooks.
+ex: ansible-galaxy role init kubernetes ---> this will help us in creating 
