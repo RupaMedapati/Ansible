@@ -1,3 +1,5 @@
+Handlers in Ansible can also be used to manage services when copying files or making configuration changes. Below is an example of an Ansible playbook that copies a file to an Ubuntu image 
+and uses a handler to restart the Apache service if the file is modified.
 ---
 - name: Install Apache and Update Index.html with Handler
   hosts: all
