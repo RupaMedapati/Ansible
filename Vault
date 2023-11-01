@@ -1,0 +1,6 @@
+Ansible Vault:Ansible Vault is a feature in Ansible that allows you to encrypt sensitive data, such as passwords, API keys, or any confidential information, so that it can be securely stored in your Ansible playbooks, inventory files, or variable files. 
+Encrypting this sensitive data helps keep it safe and prevents unauthorized access.
+ex:
+ansible-vault encrypt my_secrets.yml
+we need to set passwd next
+ansible-vault decrypt my_secrets.yml
