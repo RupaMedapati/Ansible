@@ -1,2 +1,20 @@
 Roles: mainly we used to structure ansible playbooks.
-ex: ansible-galaxy role init kubernetes ---> this will help us in creating 
+ex: ansible-galaxy role init apache.
+directory structure:
+apache/
+├── defaults/
+│   └── main.yml
+├── files/
+├── handlers/
+│   └── main.yml
+├── meta/
+│   └── main.yml
+├── tasks/
+│   └── main.yml
+├── templates/
+├── tests/
+├── vars/
+│   └── main.yml
+├── README.md
+
+
