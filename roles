@@ -16,5 +16,31 @@ apache/
 ├── vars/
 │   └── main.yml
 ├── README.md
+Edit the apache/tasks/main.yml 
+---
+- name: Install Apache web server
+  apt:
+    name: apache2
+    state: present
+  become: yes
+
+- name: Start Apache service
+  service:
+    name: apache2
+    state: started
+  become: yes
+Now, create a playbook that uses the "apache" role. Create a file named install_apache.yml:
+---
+- name: Install Apache on Web Servers
+  hosts: web_servers
+  become: yes
+  roles:
+    - apache
+Create an inventory file, for example, inventory.ini
+[web_servers]
+webserver1 ansible_host=privateip
+ansible-playbook -i inventory.ini install_apache.yml
+
+
 
 
